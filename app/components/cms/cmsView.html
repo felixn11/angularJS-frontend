@@ -1,0 +1,16 @@
+<div class="col-sm-6 col-sm-offset-3">
+    <div class="well" ng-controller="cmsController">
+        <h3>Data</h3>
+        <button class="btn btn-primary" ng-click="getLessons()">Get Data!</button>
+        <ul class="list-group" ng-if="lessons">
+            <li class="list-group-item" ng-repeat="lesson in lessons">
+                <h4>{{lesson.title}}</h4>
+                <h5>{{lesson.body}}</h5>
+            </li>
+        </ul>
+        <div class="alert alert-danger" ng-if="lessons.error">
+            <strong>There was an error: </strong> {{lessons.error}}
+            <br>Please go back and login again
+        </div>
+    </div>
+</div>

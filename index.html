@@ -4,43 +4,32 @@
 <head>
     <!-- SCROLLS -->
     <!-- load bootstrap and fontawesome via CDN -->
-    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.css" />
-
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="/node_modules/font-awesome/css/font-awesome.css" />
     <!-- SPELLS -->
     <!-- load angular and angular route via CDN -->
-    <script src="../node_modules/angular/angular.js"></script>
-    <script src="../node_modules/angular-route/angular-route.js"></script>
-    <script src="../node_modules/angular-ui-router/release/angular-ui-router.js"></script>
-    <script src="../node_modules/satellizer/satellizer.js"></script>
-    <script src="../node_modules/ngstorage/ngStorage.js"></script>
-    <script src="../app/components/app.js"></script>
-    <script src="../app/components/authentication/authController.js"></script>
+    <script src="/node_modules/angular/angular.js"></script>
+    <script src="/node_modules/angular-route/angular-route.js"></script>
+    <script src="/node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="/node_modules/satellizer/satellizer.js"></script>
+    <script src="/node_modules/ngstorage/ngStorage.js"></script>
 </head>
-<body ng-controller="authController">
-<!-- HEADER AND NAVBAR -->
-<header>
-    <nav class="navbar navbar-default">
-        <div class="container">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/">Content Management System</a>
-            </div>
-
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
-                <li><a href="#about"><i class="fa fa-shield"></i> About</a></li>
-                <li><a href="#contact"><i class="fa fa-comment"></i> Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-</header>
-
-<!-- MAIN CONTENT AND INJECTED VIEWS -->
-<div id="main">
+<body>
+<div ui-view name="nav"></div>
+<div ui-view name="lessons"></div>
+<div ui-view name="login"></div>
+<div ui-view name="logout"></div>
+<!-- MAIN CONTENT
+<div class="container">
     <div ui-view></div>
-   <!-- <div ng-view></div>
-    <!-- angular templating -->
-    <!-- this is where content will be injected -->
-</div>
+</div>-->
+<script src="/app/components/app.js"></script>
+<script src="/app/components/authentication/loginController.js"></script>
+<script src="/app/components/cms/cmsController.js"></script>
+<!-- jQuery -->
+<script src="../node_modules/jquery/dist/jquery.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
 </body>
 </html>
