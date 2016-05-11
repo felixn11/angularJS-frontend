@@ -7,7 +7,7 @@ var cmsApp = angular.module('cmsApp');
 
     $scope.getLessons = function(){
         console.log('get lessons');
-        $http.get('http://cms.nop/api/v1/lessons').success(function (lessons) {
+        $http.get('http://backend/api/v1/lessons').success(function (lessons) {
             $scope.lessons = lessons.data;
         }).error(function (error) {
             $scope.error = error;

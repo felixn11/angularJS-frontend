@@ -5,7 +5,7 @@
         .config(function($stateProvider, $urlRouterProvider, $authProvider) {
             // Satellizer configuration that specifies which API
             // route the JWT should be retrieved from
-            $authProvider.loginUrl = 'http://cms.nop/auth/login';
+            $authProvider.loginUrl = 'http://backend/auth/login';
             $stateProvider
                 .state('lessons', {
                     url: '/',
@@ -23,7 +23,6 @@
                         loginRequired: loginRequired
                     }
                 })
-
                 .state('login', {
                     url: '/login',
                     controller: 'loginController',
@@ -39,7 +38,6 @@
                         skipIfLoggedIn: skipIfLoggedIn
                     }
                 })
-
                 .state('logout', {
                 url: '/logout',
                 template: null,
