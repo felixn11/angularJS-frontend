@@ -1,6 +1,6 @@
 var cmsApp = angular.module('cmsApp');
 
-cmsApp.controller('loginController', ['$scope', '$auth', '$state', function($scope, $auth, $state) {
+cmsApp.controller('authController', ['$scope', '$auth', '$state', function($scope, $auth, $state) {
 
     $scope.login = function() {
         var credentials = {
@@ -11,13 +11,17 @@ cmsApp.controller('loginController', ['$scope', '$auth', '$state', function($sco
         // Use Satellizer's $auth service to login
         $auth.login(credentials)
             .then(function (data) {
-                console.log("succes login");
-                // If login is successful, set location to /
                 $state.go('lessons');
-                //$location.path('/lessons');
             })
             .catch(function (data) {
                 console.log("error");
             });
+    }
+
+    $scope.logout = function(){
+        // Use Satellizer's $auth service to logout
+        $auth.logout().then(function() {
+            $state.go('login');
+        });
     }
 }]);
