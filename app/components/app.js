@@ -17,7 +17,6 @@
                             templateUrl: 'app/components/cms/cmsView.html'
                         }
                     },
-                    //templateUrl: 'app/components/cms/cmsView.html',
                     controller: 'cmsController as cms',
                     resolve: {
                         loginRequired: loginRequired
@@ -25,24 +24,17 @@
                 })
                 .state('login', {
                     url: '/login',
-                    controller: 'loginController',
-
+                    controller: 'authController',
                     views: {
                         login: {
-                            templateUrl: 'app/components/authentication/loginView.html'
+                            templateUrl: 'app/components/authentication/authView.html'
                         }
                     },
-                    //templateUrl: 'app/components/authentication/loginView.html',
-
                     resolve: {
                         skipIfLoggedIn: skipIfLoggedIn
                     }
                 })
-                .state('logout', {
-                url: '/logout',
-                template: null,
-                controller: 'LogoutCtrl'
-                });
+
 
 
 

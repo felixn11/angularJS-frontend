@@ -14,7 +14,7 @@
     <script src="/node_modules/satellizer/satellizer.js"></script>
     <script src="/node_modules/ngstorage/ngStorage.js"></script>
 </head>
-<body>
+<body ng-controller="authController">
 <div ui-view name="nav"></div>
 <div ui-view name="lessons"></div>
 <div ui-view name="login"></div>
@@ -24,7 +24,7 @@
     <div ui-view></div>
 </div>-->
 <script src="/app/components/app.js"></script>
-<script src="/app/components/authentication/loginController.js"></script>
+<script src="/app/components/authentication/authController.js"></script>
 <script src="/app/components/cms/cmsController.js"></script>
 <!-- jQuery -->
 <script src="../node_modules/jquery/dist/jquery.js"></script>

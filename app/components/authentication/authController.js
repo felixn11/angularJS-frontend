@@ -1,7 +1,6 @@
 var cmsApp = angular.module('cmsApp');
 
 cmsApp.controller('authController', ['$scope', '$auth', '$state', function($scope, $auth, $state) {
-
     $scope.login = function() {
         var credentials = {
             email: $scope.email,
@@ -17,7 +16,6 @@ cmsApp.controller('authController', ['$scope', '$auth', '$state', function($scop
                 console.log("error");
             });
     }
-
     $scope.logout = function(){
         // Use Satellizer's $auth service to logout
         $auth.logout().then(function() {
