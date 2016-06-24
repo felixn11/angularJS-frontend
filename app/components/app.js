@@ -5,15 +5,15 @@
         .config(function($stateProvider, $urlRouterProvider, $authProvider) {
             // Satellizer configuration that specifies which API
             // route the JWT should be retrieved from
-            $authProvider.loginUrl = 'http://backend/auth/login';
+            $authProvider.loginUrl = 'http://cannerberg-joc.nl/auth/login';
             $stateProvider
-                .state('lessons', {
+                .state('cms', {
                     url: '/',
                     views: {
                         nav: {
                             templateUrl: 'app/components/header/header.html'
                         },
-                        lessons:{
+                        blogs:{
                             templateUrl: 'app/components/cms/cmsView.html'
                         }
                     },
@@ -34,9 +34,6 @@
                         skipIfLoggedIn: skipIfLoggedIn
                     }
                 })
-
-
-
 
             function skipIfLoggedIn($q, $auth) {
                 console.log('skipifloggedin');

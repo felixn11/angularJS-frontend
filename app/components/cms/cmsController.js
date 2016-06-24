@@ -5,10 +5,9 @@ var cmsApp = angular.module('cmsApp');
         .module('cmsApp')
         .controller('cmsController',['$scope', '$http', function($scope, $http){
 
-    $scope.getLessons = function(){
-        console.log('get lessons');
-        $http.get('http://backend/api/v1/lessons').success(function (lessons) {
-            $scope.lessons = lessons.data;
+    $scope.getBlogs = function(){
+        $http.get('http://cannerberg-joc.nl/api/v1/blogs').success(function (blogs) {
+            $scope.blogs = blogs;
         }).error(function (error) {
             $scope.error = error;
         });
